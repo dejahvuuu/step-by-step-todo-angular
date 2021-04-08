@@ -1,0 +1,29 @@
+
+<h1>Login</h1>
+
+<div class="container">
+  <!-- interpolation:
+  User Name : <input type="text" name="username" value="{{ username }}">
+  Password : <input type="password" name="password" value="{{ password }}">
+  {{ username }}-->
+
+  <!-- two way data binding:  [(ngModel)]
+  We're able to take the data from the view logic of the logging component : novopayment username
+  and right down to a template: novopayment123.
+  -->
+  User Name : <input type="text" name="username" [(ngModel)]="username">
+  Password : <input type="password" name="password" [(ngModel)]="password">
+
+
+  <!-- event binding: (click)=handleLogin() -->
+  <!--<button (event)=executeFunction()>Login</button>-->
+  <button (click)=handleLogin() class="btn btn-success">Login</button>
+
+  <!-- validation error message -->
+  <div class="alert alert-warning" *ngIf='invalidLogin'>{{ errorMessage }}</div>
+</div>
+
+
+
+
+

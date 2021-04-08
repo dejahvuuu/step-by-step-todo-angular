@@ -1,0 +1,46 @@
+
+<!-- example table simple object-->
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <!-- example simple object-->
+    <tbody>
+      <tr>
+        <td>{{ todo.id }}</td>
+        <td>{{ todo.description }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<div class="container">
+  <!-- example table multiple object-->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Target Date</th>
+        <th>Is Completed</th>
+      </tr>
+    </thead>
+    <!-- example multiple object ngFor-->
+    <tbody>
+      <!-- for en JAVA -->
+      <!-- for (Todo todo: todos) { -->
+      <tr *ngFor="let todo of todos">
+        <td>{{ todo.description }}</td>
+        <!-- pipe | it´s like a twig filter -->
+        <td>{{ todo.targetDate | date | lowercase }}</td> <!-- Ref: https://angular.io/guide/pipes -->
+        <td>{{ todo.done }}</td>
+      </tr>
+      <!-- } -->
+    </tbody>
+  </table>
+</div>
+
